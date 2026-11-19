@@ -6,6 +6,17 @@
 
 An offline guide and tracker for all **55 Grand Theft Auto VI PlayStation 5 trophies** — 1 platinum, 2 gold, 6 silver and 46 bronze. Every trophy carries its official name, description and grade, plus an original guide written for this page: what to do, the efficient method, the common pitfall, and a numbered step list. The seven trophies that hang on one-time moments are flagged **missable**, with keep-a-manual-save advice in their guides.
 
+## What's inside
+
+- **Featured guides, up front** — the three trophies players ask about first are shown in full on the home view, no clicks needed: **The Shootist** (gold in all 42 Shooting Range challenges), **Don't Touch My Deck** (complete 3 Collectible Card sets) and **A Long Road** (attain 100% completion). They are rendered from the same data as the checklist, so they can never drift from it.
+- **Roadmap to the Platinum — 7 stages**: 1 Story Campaign · 2 Strangers & Side Missions · 3 Collectibles & Exploration · 4 Activities & Challenges · 5 Crime, Combat & Money · 6 Partner Co-op · 7 Final Clean-up & 100%. The roadmap is a connected timeline; every stage block names the actual trophies in that stage and shows live earned progress for it.
+- **Tracker** — a checkbox on every card, progress saved in `localStorage`, a one-line progress strip (earned count, percentage, trophy points, per-grade breakdown), export/import of progress as a JSON file, and a reset button.
+- **Every card is complete** — official name, description and grade, an original guide, a numbered step list, an effort estimate derived from the trophy's own target (Campaign / Checklist / Long grind / One moment…), its roadmap stage, and its cited sources.
+- **Missable watchlist** — 7 one-time trophies (ids 37, 44, 45, 47, 48, 49, 50) flagged on their cards and listed up front with keep-a-manual-save advice; the story guides name the exact mission or chapter where the missable-adjacent moments live.
+- **Search, filters and spoiler protection** — full-text search, kind and grade filters, and a toggle that hides unearned story trophies until they are earned.
+
+- **Source layout** — `app/app.js` is the page controller (featured guides, card rendering, controls), `app/tracker.js` holds the tracker engine (progress storage, trophy points, filtering, spoiler protection, effort estimates, export/import) and `app/roadmap.js` renders the seven-stage roadmap timeline from the trophy data.
+
 ## Features
 
 - **Full guide for all 55 trophies** — original text for every trophy, with sources cited on every card.

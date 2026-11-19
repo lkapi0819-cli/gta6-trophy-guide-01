@@ -8,38 +8,36 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="hero">
-  <div class="hero-inner">
-    <p class="kicker">Grand Theft Auto VI · PlayStation 5 · Offline Guide</p>
-    <h1>Leonida Legend — GTA VI Trophy Guide &amp; Tracker</h1>
-    <p class="subtitle">All <strong>55 PS5 trophies</strong> — 1 platinum, 2 gold, 6 silver and 46 bronze — taken from the official PlayStation trophy list, with an original guide for every single one.</p>
-    <p class="note">Every guide here is written for this site and cites its sources beside the trophy it belongs to. No artwork, logos or assets from the game — the look is our own, and the page works fully offline.</p>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="title-row">
+      <h1>Leonida Legend — GTA VI Trophy Guide &amp; Tracker</h1>
+      <span class="masthead-tag">PS5 · 55 trophies · offline</span>
+    </div>
+    <p class="subtitle">All <strong>55 PS5 trophies</strong> — 1 platinum, 2 gold, 6 silver, 46 bronze — from the official PlayStation trophy list, each with an original, source-cited guide. No game artwork or logos; the look is our own.</p>
+    <div class="progress-strip" aria-label="Progress dashboard">
+      <span class="strip-stat" id="stat-earned">0 / 55 earned</span>
+      <span class="strip-sep">·</span>
+      <span class="strip-stat" id="stat-percent">0% complete</span>
+      <span class="strip-sep">·</span>
+      <span class="strip-stat" id="stat-points">0 trophy points</span>
+      <span class="strip-grades" id="stat-grades" aria-label="Earned by grade"></span>
+    </div>
+    <div class="bar" role="progressbar" aria-label="Overall progress"><div class="bar-fill" id="bar-fill"></div></div>
   </div>
 </header>
 
 <main>
-  <section class="dashboard" id="dashboard" aria-label="Progress dashboard">
-    <div class="stat"><span class="stat-num" id="stat-earned">0 / 55</span><span class="stat-label">Trophies earned</span></div>
-    <div class="stat"><span class="stat-num" id="stat-percent">0%</span><span class="stat-label">Complete</span></div>
-    <div class="stat"><span class="stat-num" id="stat-points">0</span><span class="stat-label">Trophy points</span></div>
-    <div class="stat grades" id="stat-grades" aria-label="Earned by grade"></div>
-    <div class="bar" role="progressbar" aria-label="Overall progress" id="bar-wrap"><div class="bar-fill" id="bar-fill"></div></div>
-  </section>
-
-  <section class="quicktips" aria-label="How to use this guide">
-    <h2>How to use this guide</h2>
-    <ol>
-      <li><strong>Play the story first</strong> (Stage 1) and keep a rolling manual save — seven trophies are missable one-time moments.</li>
-      <li><strong>Tick trophies off as you earn them.</strong> Progress saves in this browser automatically; export it before switching devices.</li>
-      <li><strong>Chase counters while you travel</strong> — stunts, vehicles, areas and choices are nearly free when spread across the whole game.</li>
-      <li><strong>Turn on spoiler protection</strong> if you want story trophy names and descriptions hidden until you earn them.</li>
-    </ol>
+  <section class="featured" id="featured" aria-label="Featured guides">
+    <h2>Start here — featured guides</h2>
+    <p class="section-intro">The three trophies players ask about first, in full: the 42-range shooting grind, the collectible card sets, and the road to 100%. Every other trophy is guided the same way in the checklist below.</p>
+    <div class="featured-grid" id="featured-cards"></div>
   </section>
 
   <section class="roadmap" id="roadmap" aria-label="Roadmap to the platinum">
     <h2>Roadmap to the Platinum</h2>
-    <p class="section-intro">Seven stages, in the order a first playthrough should attack them. Story first, counters as you travel, co-op and clean-up last.</p>
-    <div class="stage-grid" id="stage-grid"></div>
+    <p class="section-intro">Seven stages, in the order a first playthrough should attack them. Story first, counters as you travel, co-op and clean-up last. Each stage names its trophies so the route can be checked against the official list.</p>
+    <div id="stage-grid"></div>
   </section>
 
   <section class="missable-banner" id="missables" aria-label="Missable trophy warning">
@@ -62,6 +60,11 @@
           <option value="bronze">Bronze</option>
         </select>
       </label>
+      <label class="inline-check"><input type="checkbox" id="spoiler-toggle"> Spoiler protection</label>
+      <label class="inline-check"><input type="checkbox" id="hide-earned-toggle"> Hide earned</label>
+      <button type="button" id="export-btn">Export progress</button>
+      <label class="import-label">Import progress <input type="file" id="import-input" accept="application/json"></label>
+      <button type="button" id="reset-btn">Reset</button>
     </div>
     <div class="chips" id="kind-chips" role="group" aria-label="Filter by kind">
       <button type="button" class="chip active" data-kind="all">All</button>
@@ -72,19 +75,22 @@
       <button type="button" class="chip" data-kind="online">Online / Co-op</button>
       <button type="button" class="chip" data-kind="platinum">Platinum</button>
     </div>
-    <div class="control-row toggles">
-      <label><input type="checkbox" id="spoiler-toggle"> Spoiler protection (hide unearned story trophies)</label>
-      <label><input type="checkbox" id="hide-earned-toggle"> Hide earned</label>
-      <span class="spacer"></span>
-      <button type="button" id="export-btn">Export progress</button>
-      <label class="import-label">Import progress <input type="file" id="import-input" accept="application/json"></label>
-      <button type="button" id="reset-btn">Reset</button>
-    </div>
     <p class="result-count" id="result-count"></p>
   </section>
 
+  <h2 class="checklist-title" id="checklist">Full checklist — all 55 trophies, guided</h2>
   <section class="cards" id="cards" aria-label="Trophy list"></section>
   <p class="empty" id="empty" hidden>No trophies match the current search and filters.</p>
+
+  <section class="quicktips" aria-label="How to use this guide">
+    <h2>How to use this guide</h2>
+    <ol>
+      <li><strong>Play the story first</strong> (Stage 1) and keep a rolling manual save — seven trophies are missable one-time moments.</li>
+      <li><strong>Tick trophies off as you earn them.</strong> Progress saves in this browser automatically; export it before switching devices.</li>
+      <li><strong>Chase counters while you travel</strong> — stunts, vehicles, areas and choices are nearly free when spread across the whole game.</li>
+      <li><strong>Turn on spoiler protection</strong> if you want story trophy names and descriptions hidden until you earn them.</li>
+    </ol>
+  </section>
 </main>
 
 <footer>
