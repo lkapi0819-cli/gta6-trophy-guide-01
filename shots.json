@@ -1,5 +1,1 @@
-[
-  { "file": "1-checklist.jpg", "path": "/", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "2-silver.jpg", "path": "/", "grade": "silver", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "3-bronze.jpg", "path": "/", "grade": "bronze", "scroll": 1400, "viewport": { "width": 1280, "height": 800 } }
-]
+[{"file":"1-guide.jpg","path":"/","view":"Cover view: hero header, progress dashboard (with a few trophies pre-earned), quick tips, roadmap and the first trophy cards with full guides","viewport":{"height":800,"width":1280}},{"file":"2-missable.jpg","filter":"missable","path":"/?filter=missable","view":"Missable filter: the seven missable trophy cards with their flags, guides and save advice","viewport":{"height":800,"width":1280}},{"file":"3-roadmap.jpg","path":"/","scrollTo":"#roadmap","view":"Roadmap to the Platinum section scrolled into view: all seven stages with strategies and earned progress","viewport":{"height":800,"width":1280}},{"file":"4-shootist.jpg","path":"/?q=Shootist","q":"Shootist","view":"Search for 'Shootist': The Shootist card alone, showing its full guide, numbered steps and sources line","viewport":{"height":800,"width":1280}}]
